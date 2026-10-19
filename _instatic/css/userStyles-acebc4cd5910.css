@@ -1,0 +1,192 @@
+/* src/styles/FAQ-animation.css */
+.detailed-process-div {
+  cursor: pointer;
+}
+
+.q-and-a-div {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.6s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.q-and-a-div > * {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.proccess-chevron-icon {
+  transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.question-header {
+  transition: color 0.6s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+/* OPEN STATE */
+.detailed-process-div.is-open .q-and-a-div {
+  grid-template-rows: 1fr;
+}
+
+.detailed-process-div.is-open .proccess-chevron-icon {
+  transform: rotate(180deg);
+}
+
+.detailed-process-div.is-open .question-header {
+  color: #FF2F00;
+}
+
+/* src/styles/Footer-color-change-CTA.css */
+.link.footer-heading {
+  transition: color 0.3s ease;
+}
+
+.link:hover.footer-heading {
+  color: #ff2f00; /* Zmeň si na svoju želanú oranžovú farbu */
+}
+
+/* src/styles/global-css.css */
+html:not(.lt-ready) body { opacity: 0; animation: lt-failsafe 0s linear 10s forwards; }
+@keyframes lt-failsafe { to { opacity: 1; } }
+@media (scripting: none) { html:not(.lt-ready) body { opacity: 1; animation: none; } }
+
+/* src/styles/Link-underline.css */
+/* 1. Základný stav a plynulé prechody (transition) */
+.link .text-regular {
+  transition: color 0.3s ease;
+}
+
+.link .underline-link {
+  transform: scaleX(0);
+  transform-origin: left;
+  background-color: #151515; /* Začiatočná čierna farba */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.link .image-icon {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+/* 2. Stav po prejdení myšou (Hover na .link) */
+.link:hover .text-regular {
+  color: #ff2f00; /* Zmeň si na svoju želanú oranžovú farbu */
+}
+
+.link:hover .underline-link {
+  transform: scaleX(1); /* Vysunutie zľava na plnú šírku */
+  background-color: #ff2f00; /* Zmena farby pozadia čiary na oranžovú */
+}
+
+.link:hover .image-icon {
+  transform: translateX(10px); /* Jemný posun šípky doprava (môžeš upresniť v pixeloch) */
+}
+
+/* src/styles/Menu-animation.css */
+/* =========================================
+   MOBILE MENU
+   ========================================= */
+
+/* Desktop – menu overlay vôbec nepoužívame */
+.menu-overlay {
+  display: none;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media screen and (max-width: 991px) {
+
+  /* Default stav – zatvorené menu */
+  .menu-overlay {
+    display: none;
+    opacity: 0;
+  }
+
+  /* Overlay sa najprv vloží do layoutu */
+  .menu-overlay.is-open {
+    display: block;
+  }
+
+
+  /* =========================================
+     LINES
+     ========================================= */
+
+  .menu-overlay .line.horizontal {
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    transition:
+      transform 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+  }
+
+  .menu-overlay.is-visible .line.horizontal {
+    transform: scaleX(1);
+  }
+
+
+  /* =========================================
+     TEXT
+     ========================================= */
+
+  .menu-overlay .text-regular {
+    transform: translateY(110%);
+
+    transition:
+      transform 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+  }
+
+  .menu-overlay.is-visible .text-regular {
+    transform: translateY(0%);
+  }
+}
+
+/* src/styles/Webgl.css */
+/* ═══════════════════════════════════════════════════════════════
+   LIQUID WEBGL – CSS
+   Extrahované 1:1 z Webflow footer kódu (iba časti pre WebGL efekt)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Canvas, do ktorého three.js kreslí všetky obrázky */
+#gl-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Kontajner obrázka */
+.liquid-container {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent !important;
+}
+
+/* Pôvodný <img>/<video> sa skryje – namiesto neho ho kreslí WebGL */
+.liquid-img,
+.project-image,
+.liquid-container video {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Mobil (≤ 991px): žiadny WebGL, zobrazia sa normálne obrázky */
+@media screen and (max-width: 991px) {
+  #gl-canvas { display: none !important; }
+  .liquid-img,
+  .project-image,
+  .liquid-container video {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+/* ── LEN ak v JS zapneš USE_LENIS = true (smooth scroll ako vo Webflow) ── */
+/*
+html.lenis { height: auto !important; }
+.lenis.lenis-smooth { height: auto; }
+*/
