@@ -1,0 +1,168 @@
+:root {
+  --font-primary: "Neue Haas grotesk", sans-serif;
+  --font-dynapuff: "DynaPuff", sans-serif;
+  --font-russoone: "RussoOne", sans-serif;
+  --font-editorialpp: "EditorialPP", sans-serif;
+  --font-plusjakarta: "PlusJakarta", sans-serif;
+  --font-gcvank: "GCVank", sans-serif;
+  --font-gothic: "Gothic", sans-serif;
+  --font-suisse-intl: "Suisse Intl", sans-serif;
+}
+
+@font-face {
+  font-family: "Neue Haas grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/uploads/aAUMS_iJSRzVlAH9_NLmg-NeueHaasDisplayBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Neue Haas grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/uploads/n-Qn5CMZCVYiRuB2u5iol-NeueHaasDisplayRoman.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Neue Haas grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/uploads/4bEi2GfckDxbSALSZi43W-NeueHaasDisplayMediu.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DynaPuff";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/uploads/09_rCpvfgMmYE50bA59fO-DynaPuff-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RussoOne";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/uploads/AXY-snE5iQ6ZyWiByO_TA-RussoOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EditorialPP";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/uploads/CANXVlIXKamPDFOElazpL-PPEditorialNew-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PlusJakarta";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/uploads/ieAKRS5V8sBK8rqRnMdZk-PlusJakartaSans-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GCVank";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/uploads/Xq6mNC5h4WC8kO-fh_n6T-gc-vank.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/uploads/MEjWyyMtukEkgAwY9OrzD-GOTHIC.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/uploads/JXV_pSkGuwLMTLNWZmFL7-SuisseIntl-SemiBold.ttf") format("truetype");
+}
+:root {
+  --black: hsla(0, 0%, 8.24%, 1);
+  --black-5: hsla(0, 0%, 8.24%, 0.05);
+  --black-10: hsla(0, 0%, 8.24%, 0.1);
+  --black-20: hsla(0, 0%, 8.24%, 0.2);
+  --black-30: hsla(0, 0%, 8.24%, 0.3);
+  --black-40: hsla(0, 0%, 8.24%, 0.4);
+  --black-50: hsla(0, 0%, 8.24%, 0.5);
+  --black-60: hsla(0, 0%, 8.24%, 0.6);
+  --black-70: hsla(0, 0%, 8.24%, 0.7);
+  --black-80: hsla(0, 0%, 8.24%, 0.8);
+  --black-90: hsla(0, 0%, 8.24%, 0.9);
+  --black-d-1: hsla(0, 0%, 6.92%, 1);
+  --black-d-2: hsla(0, 0%, 5.6%, 1);
+  --black-d-3: hsla(0, 0%, 4.28%, 1);
+  --black-d-4: hsla(0, 0%, 2.96%, 1);
+  --black-l-1: hsla(0, 0%, 22.92%, 1);
+  --black-l-2: hsla(0, 0%, 37.6%, 1);
+  --black-l-3: hsla(0, 0%, 52.28%, 1);
+  --black-l-4: hsla(0, 0%, 66.96%, 1);
+  --white: hsla(0, 0%, 98.04%, 1);
+  --white-5: hsla(0, 0%, 98.04%, 0.05);
+  --white-10: hsla(0, 0%, 98.04%, 0.1);
+  --white-20: hsla(0, 0%, 98.04%, 0.2);
+  --white-30: hsla(0, 0%, 98.04%, 0.3);
+  --white-40: hsla(0, 0%, 98.04%, 0.4);
+  --white-50: hsla(0, 0%, 98.04%, 0.5);
+  --white-60: hsla(0, 0%, 98.04%, 0.6);
+  --white-70: hsla(0, 0%, 98.04%, 0.7);
+  --white-80: hsla(0, 0%, 98.04%, 0.8);
+  --white-90: hsla(0, 0%, 98.04%, 0.9);
+  --white-d-1: hsla(0, 0%, 82.35%, 1);
+  --white-d-2: hsla(0, 0%, 66.67%, 1);
+  --white-d-3: hsla(0, 0%, 50.98%, 1);
+  --white-d-4: hsla(0, 0%, 35.29%, 1);
+  --white-l-1: hsla(0, 0%, 98.35%, 1);
+  --white-l-2: hsla(0, 0%, 98.67%, 1);
+  --white-l-3: hsla(0, 0%, 98.98%, 1);
+  --white-l-4: hsla(0, 0%, 99.29%, 1);
+  --orange: hsla(11.06, 100%, 50%, 1);
+  --orange-5: hsla(11.06, 100%, 50%, 0.05);
+  --orange-10: hsla(11.06, 100%, 50%, 0.1);
+  --orange-20: hsla(11.06, 100%, 50%, 0.2);
+  --orange-30: hsla(11.06, 100%, 50%, 0.3);
+  --orange-40: hsla(11.06, 100%, 50%, 0.4);
+  --orange-50: hsla(11.06, 100%, 50%, 0.5);
+  --orange-60: hsla(11.06, 100%, 50%, 0.6);
+  --orange-70: hsla(11.06, 100%, 50%, 0.7);
+  --orange-80: hsla(11.06, 100%, 50%, 0.8);
+  --orange-90: hsla(11.06, 100%, 50%, 0.9);
+  --orange-d-1: hsla(11.06, 100%, 42%, 1);
+  --orange-d-2: hsla(11.06, 100%, 34%, 1);
+  --orange-d-3: hsla(11.06, 100%, 26%, 1);
+  --orange-d-4: hsla(11.06, 100%, 18%, 1);
+  --orange-l-1: hsla(11.06, 100%, 58%, 1);
+  --orange-l-2: hsla(11.06, 100%, 66%, 1);
+  --orange-l-3: hsla(11.06, 100%, 74%, 1);
+  --orange-l-4: hsla(11.06, 100%, 82%, 1);
+  --grey: hsla(0, 0%, 64.71%, 1);
+  --grey-5: hsla(0, 0%, 64.71%, 0.05);
+  --grey-10: hsla(0, 0%, 64.71%, 0.1);
+  --grey-20: hsla(0, 0%, 64.71%, 0.2);
+  --grey-30: hsla(0, 0%, 64.71%, 0.3);
+  --grey-40: hsla(0, 0%, 64.71%, 0.4);
+  --grey-50: hsla(0, 0%, 64.71%, 0.5);
+  --grey-60: hsla(0, 0%, 64.71%, 0.6);
+  --grey-70: hsla(0, 0%, 64.71%, 0.7);
+  --grey-80: hsla(0, 0%, 64.71%, 0.8);
+  --grey-90: hsla(0, 0%, 64.71%, 0.9);
+  --grey-d-1: hsla(0, 0%, 54.35%, 1);
+  --grey-d-2: hsla(0, 0%, 44%, 1);
+  --grey-d-3: hsla(0, 0%, 33.65%, 1);
+  --grey-d-4: hsla(0, 0%, 23.29%, 1);
+  --grey-l-1: hsla(0, 0%, 70.35%, 1);
+  --grey-l-2: hsla(0, 0%, 76%, 1);
+  --grey-l-3: hsla(0, 0%, 81.65%, 1);
+  --grey-l-4: hsla(0, 0%, 87.29%, 1);
+}
