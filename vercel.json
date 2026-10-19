@@ -1,0 +1,48 @@
+{
+  "rewrites": [
+    {
+      "source": "/about-me",
+      "destination": "/about-me.html"
+    },
+    {
+      "source": "/architecture",
+      "destination": "/architecture.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/pomedzi",
+      "destination": "/pomedzi.html"
+    },
+    {
+      "source": "/retro",
+      "destination": "/retro.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/shop-pilot",
+      "destination": "/shop-pilot.html"
+    },
+    {
+      "source": "/slavia-uk",
+      "destination": "/slavia-uk.html"
+    },
+    {
+      "source": "/swiss-dental-clinic",
+      "destination": "/swiss-dental-clinic.html"
+    },
+    {
+      "source": "/thank-you",
+      "destination": "/thank-you.html"
+    },
+    {
+      "source": "/the-red-files",
+      "destination": "/the-red-files.html"
+    }
+  ]
+}
