@@ -1,0 +1,344 @@
+/* src/styles/FAQ-animation.css */
+.detailed-process-div {
+  cursor: pointer;
+}
+
+.q-and-a-div {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.6s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.q-and-a-div > * {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.proccess-chevron-icon {
+  transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.question-header {
+  transition: color 0.6s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+/* OPEN STATE */
+.detailed-process-div.is-open .q-and-a-div {
+  grid-template-rows: 1fr;
+}
+
+.detailed-process-div.is-open .proccess-chevron-icon {
+  transform: rotate(180deg);
+}
+
+.detailed-process-div.is-open .question-header {
+  color: #FF2F00;
+}
+
+/* src/styles/Footer-color-change-CTA.css */
+.link.footer-heading {
+  transition: color 0.3s ease;
+}
+
+.link:hover.footer-heading {
+  color: #ff2f00; /* Zmeň si na svoju želanú oranžovú farbu */
+}
+
+/* src/styles/Form-design.css */
+/* Textové polia = všetky inputy okrem checkboxu, radia a tlačidiel */
+:is(input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="reset"], [type="file"], [type="range"], [type="color"], [type="hidden"]), textarea) {
+  border: none !important;
+  border-bottom: 1px solid #ccc !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+/* Oranžová čiara naspodku pri focuse (len textové polia) */
+:is(input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="reset"], [type="file"], [type="range"], [type="color"], [type="hidden"]), textarea):focus {
+  border-bottom: 1px solid var(--form-accent) !important;
+}
+
+/* Bez predvoleného obrysu pri focuse (platí pre všetky polia) */
+:is(input, textarea, select):focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FORMULÁR – vlastný dizajn checkboxov a radio bodiek (oranžová, minimalistický)
+   Štruktúra: kartička .multiselct → vnútri <input class="checkbox"> alebo <input class="radio-dot">
+   Funkčnosť (klik na celú kartičku) rieši form-cards.ts.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --form-accent: #FF2F00;                         /* hlavná farba (rovnaká ako na zvyšku webu) */
+  --form-accent-soft: rgba(255, 47, 0, 0.06);     /* jemné pozadie vybranej kartičky */
+  --form-border: rgba(0, 0, 0, 0.32);             /* okraj nevybraného prvku */
+  --form-ease: cubic-bezier(0.8, 0, 0.2, 1);      /* rovnaký easing ako na zvyšku webu */
+  --form-control-size: 1.125rem;                  /* 18 px */
+}
+
+/* ── Kartička ── */
+:is(.multiselct, .multiselect) {
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    border-color 0.3s var(--form-ease),
+    background-color 0.3s var(--form-ease);
+}
+
+@media (hover: hover) {
+  :is(.multiselct, .multiselect):hover {
+    border-color: var(--form-accent);
+  }
+}
+
+/* vybraná kartička: oranžový okraj + jemné pozadie */
+:is(.multiselct, .multiselect):has(:checked) {
+  border-color: var(--form-accent);
+  background-color: var(--form-accent-soft);
+}
+
+/* ovládanie klávesnicou (Tab, Space) */
+:is(.multiselct, .multiselect):has(:focus-visible) {
+  outline: 2px solid var(--form-accent);
+  outline-offset: 2px;
+}
+
+:is(.multiselct, .multiselect):has(:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Spoločný základ checkboxu aj radio ── */
+:is(.multiselct, .multiselect) :is(.checkbox, input[type="checkbox"], .radio-dot, input[type="radio"]) {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: none;
+  box-sizing: border-box;
+  width: var(--form-control-size);
+  height: var(--form-control-size);
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-content: center;
+  background-color: transparent;
+  border: 1.5px solid var(--form-border);
+  cursor: inherit;
+  transition:
+    background-color 0.25s var(--form-ease),
+    border-color 0.25s var(--form-ease);
+}
+
+@media (hover: hover) {
+  :is(.multiselct, .multiselect):hover :is(.checkbox, input[type="checkbox"], .radio-dot, input[type="radio"]) {
+    border-color: var(--form-accent);
+  }
+}
+
+/* ── Checkbox: zaoblený štvorec, oranžová výplň, biela fajka ── */
+:is(.multiselct, .multiselect) :is(.checkbox, input[type="checkbox"]) {
+  border-radius: 5px;
+}
+
+:is(.multiselct, .multiselect) :is(.checkbox, input[type="checkbox"])::before {
+  content: "";
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: #fff;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transition: transform 0.25s var(--form-ease);
+}
+
+:is(.multiselct, .multiselect) :is(.checkbox, input[type="checkbox"]):checked {
+  background-color: var(--form-accent);
+  border-color: var(--form-accent);
+}
+
+:is(.multiselct, .multiselect) :is(.checkbox, input[type="checkbox"]):checked::before {
+  transform: scale(1);
+}
+
+/* ── Radio: kruh, oranžový okraj, oranžový stredový bod ── */
+:is(.multiselct, .multiselect) :is(.radio-dot, input[type="radio"]) {
+  border-radius: 50%;
+}
+
+:is(.multiselct, .multiselect) :is(.radio-dot, input[type="radio"])::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--form-accent);
+  transform: scale(0);
+  transition: transform 0.25s var(--form-ease);
+}
+
+:is(.multiselct, .multiselect) :is(.radio-dot, input[type="radio"]):checked {
+  background-color: var(--form-accent);
+  border-color: var(--form-accent);
+}
+
+:is(.multiselct, .multiselect) :is(.radio-dot, input[type="radio"]):checked::before {
+  transform: scale(1);
+}
+
+/* ── Menej pohybu, ak to má používateľ nastavené v systéme ── */
+@media (prefers-reduced-motion: reduce) {
+  :is(.multiselct, .multiselect),
+  :is(.multiselct, .multiselect) * {
+    transition-duration: 0.01s !important;
+  }
+}
+
+/* src/styles/global-css.css */
+html:not(.lt-ready) body { opacity: 0; animation: lt-failsafe 0s linear 10s forwards; }
+@keyframes lt-failsafe { to { opacity: 1; } }
+@media (scripting: none) { html:not(.lt-ready) body { opacity: 1; animation: none; } }
+
+/* src/styles/Link-underline.css */
+/* 1. Základný stav a plynulé prechody (transition) */
+.link .text-regular {
+  transition: color 0.3s ease;
+}
+
+.link .underline-link {
+  transform: scaleX(0);
+  transform-origin: left;
+  background-color: #151515; /* Začiatočná čierna farba */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.link .image-icon {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+/* 2. Stav po prejdení myšou (Hover na .link) */
+.link:hover .text-regular {
+  color: #ff2f00; /* Zmeň si na svoju želanú oranžovú farbu */
+}
+
+.link:hover .underline-link {
+  transform: scaleX(1); /* Vysunutie zľava na plnú šírku */
+  background-color: #ff2f00; /* Zmena farby pozadia čiary na oranžovú */
+}
+
+.link:hover .image-icon {
+  transform: translateX(10px); /* Jemný posun šípky doprava (môžeš upresniť v pixeloch) */
+}
+
+/* src/styles/Menu-animation.css */
+/* ═══════════════════════════════════════════════════════════════
+   MOBILNÉ MENU – animácia otvárania a zatvárania
+   Všetko platí LEN vnútri .menu-overlay. Stavy riadi JS (mobile-menu.ts):
+     .is-visible  → display: block
+     .is-open     → spustí animácie (o snímok neskôr, aby prebehli prechody)
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --menu-ease: cubic-bezier(0.8, 0, 0.2, 1);   /* rovnaký easing ako "hop" na zvyšku webu */
+}
+
+/* ── Overlay: none → block, opacity 0 → 100 % ── */
+.menu-overlay {
+  display: none;
+  opacity: 0;
+  z-index: 100;                                /* musí byť nad WebGL canvasom (ten má z-index 5) */
+  transition: opacity 0.45s var(--menu-ease);
+}
+.menu-overlay.is-visible { display: flex; }
+.menu-overlay.is-open    { opacity: 1; }
+
+/* ── Čiary: natiahnutie z 0 na 100 % (zľava) ── */
+.menu-overlay .line-horizontal {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s var(--menu-ease);                 /* zatváranie: rýchlo, bez oneskorenia */
+}
+.menu-overlay.is-open .line-horizontal {
+  transform: scaleX(1);
+  transition: transform 1s var(--menu-ease);                   /* otváranie */
+  transition-delay: calc(0.15s + var(--i, 0) * 0.08s);         /* postupne jedna za druhou */
+}
+
+/* ── Texty: vysunutie zdola nahor (obal má overflow: hidden) ── */
+.menu-overlay .text-regular {
+  transform: translateY(110%);
+  transition: transform 0.5s var(--menu-ease);
+}
+.menu-overlay.is-open .text-regular {
+  transform: translateY(0);
+  transition: transform 1s var(--menu-ease);
+  transition-delay: calc(0.25s + var(--i, 0) * 0.07s);
+}
+
+/* ── Zámok scrollu, kým je menu otvorené ── */
+html.menu-open,
+html.menu-open body {
+  overflow: hidden;
+}
+
+/* ── Menu je len pre mobil (rovnaký breakpoint ako zvyšok webu: 991 px) ── */
+@media (min-width: 992px) {
+  .menu-overlay { display: none !important; }
+}
+
+/* ── Menej pohybu, ak to má používateľ nastavené v systéme ── */
+@media (prefers-reduced-motion: reduce) {
+  .menu-overlay,
+  .menu-overlay * {
+    transition-duration: 0.01s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+/* src/styles/Webgl.css */
+/* ═══════════════════════════════════════════════════════════════
+   LIQUID WEBGL – CSS
+   Extrahované 1:1 z Webflow footer kódu (iba časti pre WebGL efekt)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Canvas, do ktorého three.js kreslí všetky obrázky */
+#gl-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Kontajner obrázka */
+.liquid-container {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent !important;
+}
+
+/* Pôvodný <img>/<video> sa skryje – namiesto neho ho kreslí WebGL */
+.liquid-img,
+.project-image,
+.liquid-container video {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Mobil (≤ 991px): žiadny WebGL, zobrazia sa normálne obrázky */
+@media screen and (max-width: 991px) {
+  #gl-canvas { display: none !important; }
+  .liquid-img,
+  .project-image,
+  .liquid-container video {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+/* ── LEN ak v JS zapneš USE_LENIS = true (smooth scroll ako vo Webflow) ── */
+/*
+html.lenis { height: auto !important; }
+.lenis.lenis-smooth { height: auto; }
+*/
