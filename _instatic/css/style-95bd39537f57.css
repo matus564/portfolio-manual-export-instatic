@@ -197,7 +197,7 @@
 
 @media (max-width: 375px) {
   .gap-projects {
-  gap: 8px;
+  gap: 40px;
   }
 }
 
@@ -394,7 +394,6 @@
   display: block;
   font-family: "Neue Haas grotesk", sans-serif;
   font-weight: 500;
-  letter-spacing: 0.03em;
   padding: 16px 8px;
   }
 }
@@ -426,7 +425,6 @@
   display: block;
   font-family: "Neue Haas grotesk", sans-serif;
   font-weight: 500;
-  letter-spacing: 0.03em;
   padding: 16px 8px;
   }
 }
@@ -606,6 +604,12 @@
   gap: 16px;
 }
 
+@media (max-width: 375px) {
+  .form-flex {
+  flex-direction: column;
+  }
+}
+
 .form-input {
   border-style: none;
   background-color: var(--white);
@@ -616,6 +620,13 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+@media (max-width: 375px) {
+  .input-flex {
+  align-items: stretch;
+  align-self: stretch;
+  }
 }
 
 .input-text {
@@ -805,6 +816,8 @@
   .font-preview-div {
   gap: 8px;
   align-items: stretch;
+  padding-top: 32px;
+  padding-bottom: 32px;
   }
 }
 
@@ -980,13 +993,12 @@
 
 .imgae-fill-div {
   position: absolute;
-  width: 100vw;
-  height: 200%;
+  width: 100%;
+  height: 100%;
   top: 0px;
   right: 0px;
   bottom: 0px;
   background-color: var(--white);
-  min-width: 100vw;
   z-index: 100;
 }
 
@@ -1265,7 +1277,7 @@
 
 @media (max-width: 375px) {
   .project-smaller-width {
-  max-width: 65vw;
+  max-width: none;
   }
 }
 
@@ -1289,7 +1301,7 @@
   .poject-section-gap {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 8px;
   }
 }
 
@@ -1297,7 +1309,7 @@
   .mobile-vertical {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 8px;
   }
 }
 
@@ -1309,7 +1321,7 @@
 
 @media (max-width: 375px) {
   .slavia-flexes {
-  gap: 80px;
+  gap: 8px;
   }
 }
 
@@ -1334,6 +1346,7 @@
 
 .suisse-intl {
   font-family: var(--font-suisse-intl);
+  font-weight: 600;
 }
 
 .my-view-heading {
@@ -1415,4 +1428,33 @@
 
 .thank-you-section {
   margin-bottom: 0px;
+}
+
+.relative-div-img {
+  position: relative;
+}
+
+.thank-you-text {
+  max-width: 20vw;
+}
+
+@media (max-width: 768px) {
+  .thank-you-text {
+  max-width: 50vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-projects-gap {
+  display: flex;
+  gap: 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  .home-projects-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  }
 }
