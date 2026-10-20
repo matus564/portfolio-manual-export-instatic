@@ -1094,6 +1094,13 @@
   max-height: 150px;
 }
 
+@media (max-width: 375px) {
+  .vertical-line {
+  min-height: 80px;
+  max-height: 80px;
+  }
+}
+
 .line-value {
   display: flex;
   flex-direction: column;
@@ -1441,6 +1448,12 @@
 @media (max-width: 768px) {
   .thank-you-text {
   max-width: 50vw;
+  }
+}
+
+@media (max-width: 375px) {
+  .grayscale {
+  filter: grayscale(100%);
   }
 }
 

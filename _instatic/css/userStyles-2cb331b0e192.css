@@ -232,49 +232,71 @@ html:not(.lt-ready) body { opacity: 0; animation: lt-failsafe 0s linear 10s forw
 }
 
 /* src/styles/Menu-animation.css */
+```css
 /* ═══════════════════════════════════════════════════════════════
    MOBILNÉ MENU – animácia otvárania a zatvárania
-   Všetko platí LEN vnútri .menu-overlay. Stavy riadi JS (mobile-menu.ts):
-     .is-visible  → display: block
-     .is-open     → spustí animácie (o snímok neskôr, aby prebehli prechody)
+   Otváranie: rýchle a dynamické
+   Zatváranie: takmer okamžité
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
-  --menu-ease: cubic-bezier(0.8, 0, 0.2, 1);   /* rovnaký easing ako "hop" na zvyšku webu */
+  --menu-ease: cubic-bezier(0.8, 0, 0.2, 1);
 }
 
-/* ── Overlay: none → block, opacity 0 → 100 % ── */
+/* ── Overlay ── */
 .menu-overlay {
   display: none;
   opacity: 0;
-  z-index: 100;                                /* musí byť nad WebGL canvasom (ten má z-index 5) */
-  transition: opacity 0.25s var(--menu-ease);
+  z-index: 100;
+  transition: opacity 0.12s var(--menu-ease);
 }
-.menu-overlay.is-visible { display: flex; }
-.menu-overlay.is-open    { opacity: 1; }
 
-/* ── Čiary: natiahnutie z 0 na 100 % (zľava) ── */
+.menu-overlay.is-visible {
+  display: flex;
+}
+
+.menu-overlay.is-open {
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+
+
+/* ── Čiary ── */
 .menu-overlay .line-horizontal {
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.5s var(--menu-ease);                 /* zatváranie: rýchlo, bez oneskorenia */
-}
-.menu-overlay.is-open .line-horizontal {
-  transform: scaleX(1);
-  transition: transform 1s var(--menu-ease);                   /* otváranie */
-  transition-delay: calc(0.05s + var(--i, 0) * 0.04s);         /* postupne jedna za druhou */
+
+  /* ZATVÁRANIE */
+  transition: transform 0.12s var(--menu-ease);
+  transition-delay: 0s;
 }
 
-/* ── Texty: vysunutie zdola nahor (obal má overflow: hidden) ── */
+.menu-overlay.is-open .line-horizontal {
+  transform: scaleX(1);
+
+  /* OTVÁRANIE */
+  transition: transform 0.4s var(--menu-ease);
+  transition-delay: calc(0.02s + var(--i, 0) * 0.025s);
+}
+
+
+/* ── Texty ── */
 .menu-overlay .text-regular {
   transform: translateY(110%);
-  transition: transform 0.5s var(--menu-ease);
+
+  /* ZATVÁRANIE */
+  transition: transform 0.12s var(--menu-ease);
+  transition-delay: 0s;
 }
+
 .menu-overlay.is-open .text-regular {
   transform: translateY(0);
-  transition: transform 1s var(--menu-ease);
-  transition-delay: calc(0.1s + var(--i, 0) * 0.04s);
+
+  /* OTVÁRANIE */
+  transition: transform 0.4s var(--menu-ease);
+  transition-delay: calc(0.04s + var(--i, 0) * 0.025s);
 }
+
 
 /* ── Zámok scrollu, kým je menu otvorené ── */
 html.menu-open,
@@ -282,10 +304,14 @@ html.menu-open body {
   overflow: hidden;
 }
 
-/* ── Menu je len pre mobil (rovnaký breakpoint ako zvyšok webu: 991 px) ── */
+
+/* ── Menu je len pre mobil ── */
 @media (min-width: 992px) {
-  .menu-overlay { display: none !important; }
+  .menu-overlay {
+    display: none !important;
+  }
 }
+
 
 /* ── Menej pohybu, ak to má používateľ nastavené v systéme ── */
 @media (prefers-reduced-motion: reduce) {
@@ -295,6 +321,7 @@ html.menu-open body {
     transition-delay: 0s !important;
   }
 }
+```
 
 /* src/styles/Webgl.css */
 /* ═══════════════════════════════════════════════════════════════
