@@ -45,10 +45,8 @@
       "destination": "/the-red-files.html"
     },
     {
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/404.html" }
-  ]
-}
+      "source": "/404",
+      "destination": "/404.html"
+    }
   ]
 }
