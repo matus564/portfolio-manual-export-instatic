@@ -1009,12 +1009,12 @@
 
 .imgae-fill-div {
   position: absolute;
-  top: -40px;
-  right: -40px;
-  bottom: -40px;
   background-color: var(--white);
-  left: -40px;
   z-index: 110;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 
 @media (max-width: 375px) {
