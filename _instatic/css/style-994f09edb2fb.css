@@ -88,7 +88,7 @@
 @media (max-width: 375px) {
   .image-hero {
   display: block;
-  max-width: 65vw;
+  max-width: 60vw;
   }
 }
 
@@ -140,8 +140,7 @@
 
 @media (max-width: 375px) {
   .image-hero-chevron {
-  width: 2rem;
-  transform: rotate(90deg);
+  height: 2rem;
   }
 }
 
@@ -1215,12 +1214,6 @@
 }
 
 @media (max-width: 375px) {
-  .home-arrow-div {
-  display: flex;
-  }
-}
-
-@media (max-width: 375px) {
   .pc {
   display: none;
   }
@@ -1233,7 +1226,6 @@
 @media (max-width: 375px) {
   .mobile {
   display: block;
-  align-self: flex-start;
   }
 }
 
@@ -1256,7 +1248,7 @@
 @media (max-width: 375px) {
   .text-hero-description-mobile {
   display: block;
-  max-width: 65vw;
+  max-width: 60vw;
   }
 }
 
