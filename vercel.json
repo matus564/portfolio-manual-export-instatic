@@ -43,6 +43,12 @@
     {
       "source": "/the-red-files",
       "destination": "/the-red-files.html"
-    }
+    },
+    {
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/404.html" }
+  ]
+}
   ]
 }
