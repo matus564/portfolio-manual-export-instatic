@@ -31,7 +31,7 @@
 
 @media (max-width: 375px) {
   .flex-vertical {
-  gap: 16px;
+  gap: 8px;
   }
 }
 
@@ -77,7 +77,7 @@
 @media (max-width: 375px) {
   .horizontal-space-between {
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   }
 }
 
@@ -88,7 +88,7 @@
 @media (max-width: 375px) {
   .image-hero {
   display: block;
-  max-width: 50vw;
+  max-width: 65vw;
   }
 }
 
@@ -141,6 +141,7 @@
 @media (max-width: 375px) {
   .image-hero-chevron {
   width: 2rem;
+  transform: rotate(90deg);
   }
 }
 
@@ -956,6 +957,12 @@
   align-self: auto;
 }
 
+@media (max-width: 375px) {
+  .link {
+  align-self: flex-start;
+  }
+}
+
 .max-width {
   max-width: 60vw;
 }
@@ -1210,8 +1217,6 @@
 @media (max-width: 375px) {
   .home-arrow-div {
   display: flex;
-  justify-content: flex-end;
-  align-self: flex-end;
   }
 }
 
@@ -1229,12 +1234,6 @@
   .mobile {
   display: block;
   align-self: flex-start;
-  }
-}
-
-@media (max-width: 375px) {
-  .hero-arrow-image {
-  transform: rotate(90deg);
   }
 }
 
@@ -1257,7 +1256,7 @@
 @media (max-width: 375px) {
   .text-hero-description-mobile {
   display: block;
-  max-width: 50vw;
+  max-width: 65vw;
   }
 }
 
@@ -1434,6 +1433,12 @@
 @media (max-width: 768px) {
   .thank-you-text {
   max-width: 50vw;
+  }
+}
+
+@media (max-width: 375px) {
+  .thank-you-text {
+  max-width: 70vw;
   }
 }
 
