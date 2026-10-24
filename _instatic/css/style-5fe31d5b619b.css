@@ -960,7 +960,7 @@
 }
 
 .link {
-  align-self: auto;
+  align-self: flex-start;
 }
 
 @media (max-width: 375px) {
