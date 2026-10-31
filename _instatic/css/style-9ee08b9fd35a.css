@@ -329,7 +329,6 @@
 
 .div-image-about-me {
   max-width: 40vw;
-  aspect-ratio: 1.5;
   width: 100%;
 }
 
@@ -1061,11 +1060,6 @@
   }
 }
 
-.about-me-img-container {
-  max-width: 20vw;
-  aspect-ratio: 0.8;
-}
-
 @media (max-width: 375px) {
   .about-me-img-container {
   max-width: none;
@@ -1545,8 +1539,4 @@
   .get-in-touch-div {
   max-width: 50vw;
   }
-}
-
-.about-me-image {
-  object-position: right;
 }
