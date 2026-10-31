@@ -322,7 +322,7 @@
 
 @media (max-width: 375px) {
   .horizontal-to-vertical-about-me {
-  flex-direction: row;
+  flex-direction: column;
   gap: 16px;
   }
 }
@@ -335,8 +335,7 @@
 
 @media (max-width: 375px) {
   .div-image-about-me {
-  max-width: 65vw;
-  aspect-ratio: 1.15;
+  max-width: none;
   }
 }
 
@@ -1047,14 +1046,19 @@
 
 @media (max-width: 375px) {
   .text-about-me {
-  font-size: 1.75rem;
-  max-width: 70v;
+  font-size: 1rem;
   }
 }
 
 .gap-about-me {
   display: flex;
   gap: 40px;
+}
+
+@media (max-width: 375px) {
+  .gap-about-me {
+  gap: 16px;
+  }
 }
 
 .about-me-img-container {
@@ -1064,7 +1068,8 @@
 
 @media (max-width: 375px) {
   .about-me-img-container {
-  max-width: 40vw;
+  max-width: none;
+  aspect-ratio: auto;
   }
 }
 
@@ -1086,7 +1091,9 @@
   .section-about-me {
   max-width: none;
   display: flex;
-  gap: 80px;
+  gap: 16px;
+  flex-direction: column;
+  min-height: 0;
   }
 }
 
@@ -1538,4 +1545,8 @@
   .get-in-touch-div {
   max-width: 50vw;
   }
+}
+
+.about-me-image {
+  object-position: right;
 }
