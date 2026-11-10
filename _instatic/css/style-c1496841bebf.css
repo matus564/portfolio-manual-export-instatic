@@ -105,6 +105,7 @@
   line-height: 104%;
   margin-left: -0.06em;
   margin-top: -0.05em;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
@@ -115,9 +116,10 @@
 
 @media (max-width: 375px) {
   .text-hero-heading {
-  font-size: 24vw;
+  font-size: 23vw;
   max-width: none;
   line-height: 85%;
+  margin-left: -0.02em;
   }
 }
 
@@ -961,8 +963,6 @@
 
 .link {
   align-self: flex-start;
-  position: relative;
-  z-index: 20;
 }
 
 @media (max-width: 375px) {
