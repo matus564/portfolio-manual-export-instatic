@@ -100,21 +100,22 @@
 }
 
 .text-hero-heading {
-  font-size: 6rem;
-  letter-spacing: -0.01em;
-  line-height: 102%;
-  max-width: 65vw;
+  font-size: 14vw;
+  letter-spacing: -0.03em;
+  line-height: 104%;
+  margin-left: -0.06em;
+  margin-top: -0.05em;
 }
 
 @media (max-width: 768px) {
   .text-hero-heading {
-  font-size: 3rem;
+  font-size: 14vw;
   }
 }
 
 @media (max-width: 375px) {
   .text-hero-heading {
-  font-size: 2.5rem;
+  font-size: 24vw;
   max-width: none;
   line-height: 85%;
   }
@@ -372,7 +373,7 @@
 .div-hero-line {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0px;
 }
 
 .absolute-home {
@@ -960,6 +961,8 @@
 
 .link {
   align-self: flex-start;
+  position: relative;
+  z-index: 20;
 }
 
 @media (max-width: 375px) {
