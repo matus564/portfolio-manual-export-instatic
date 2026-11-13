@@ -321,12 +321,14 @@
 .horizontal-to-vertical-about-me {
   display: flex;
   flex-direction: row;
+  padding-left: 216px;
 }
 
 @media (max-width: 375px) {
   .horizontal-to-vertical-about-me {
   flex-direction: column;
   gap: 16px;
+  padding-left: 0px;
   }
 }
 
@@ -735,7 +737,7 @@
 
 .project-heading {
   line-height: 80%;
-  font-size: 4rem;
+  font-size: 12rem;
 }
 
 .pc-small {
@@ -920,6 +922,7 @@
 .horizontal-to-vertical-project {
   display: flex;
   gap: 16px;
+  flex-direction: column;
 }
 
 @media (max-width: 375px) {
@@ -1035,23 +1038,6 @@
   }
 }
 
-.text-about-me {
-  font-size: 3rem;
-}
-
-@media (max-width: 768px) {
-  .text-about-me {
-  max-width: none;
-  font-size: 2rem;
-  }
-}
-
-@media (max-width: 375px) {
-  .text-about-me {
-  font-size: 1rem;
-  }
-}
-
 .gap-about-me {
   display: flex;
   gap: 40px;
@@ -1059,7 +1045,7 @@
 
 @media (max-width: 375px) {
   .gap-about-me {
-  gap: 16px;
+  gap: 8px;
   }
 }
 
@@ -1072,7 +1058,6 @@
 
 .section-about-me {
   min-height: 85vh;
-  max-width: 75vw;
   display: flex;
   gap: 80px;
 }
@@ -1080,7 +1065,6 @@
 @media (max-width: 768px) {
   .section-about-me {
   min-height: 60vh;
-  max-width: 75vw;
   }
 }
 
@@ -1088,7 +1072,7 @@
   .section-about-me {
   max-width: none;
   display: flex;
-  gap: 16px;
+  gap: 80px;
   flex-direction: column;
   min-height: 0;
   }
@@ -1541,5 +1525,25 @@
 @media (max-width: 375px) {
   .get-in-touch-div {
   max-width: 50vw;
+  }
+}
+
+.aboutme-div-text {
+  max-width: 40vw;
+}
+
+@media (max-width: 375px) {
+  .aboutme-div-text {
+  max-width: none;
+  }
+}
+
+.about-me-div-long {
+  min-width: 200px;
+}
+
+@media (max-width: 375px) {
+  .about-me-div-long {
+  min-width: 80px;
   }
 }
