@@ -737,7 +737,19 @@
 
 .project-heading {
   line-height: 80%;
-  font-size: 12rem;
+  font-size: 14vw;
+}
+
+@media (max-width: 768px) {
+  .project-heading {
+  font-size: 14vw;
+  }
+}
+
+@media (max-width: 375px) {
+  .project-heading {
+  font-size: 14vw;
+  }
 }
 
 .pc-small {
@@ -921,7 +933,7 @@
 
 .horizontal-to-vertical-project {
   display: flex;
-  gap: 16px;
+  gap: 80px;
   flex-direction: column;
 }
 
