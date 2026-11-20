@@ -7,6 +7,7 @@
   --font-gcvank: "GCVank", sans-serif;
   --font-gothic: "Gothic", sans-serif;
   --font-suisse-intl: "Suisse Intl", sans-serif;
+  --font-alta: "Alta", sans-serif;
 }
 
 @font-face {
@@ -87,6 +88,14 @@
   font-weight: 600;
   font-display: swap;
   src: url("/uploads/JXV_pSkGuwLMTLNWZmFL7-SuisseIntl-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Alta";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/uploads/hWLRBGEHmex-aREVUqlbz-Alta_regular.otf") format("opentype");
 }
 :root {
   --black: hsla(0, 0%, 8.24%, 1);

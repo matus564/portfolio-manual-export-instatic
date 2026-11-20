@@ -45,6 +45,10 @@
       "destination": "/the-red-files.html"
     },
     {
+      "source": "/atelier-vera",
+      "destination": "/atelier-vera.html"
+    },
+    {
       "source": "/404",
       "destination": "/404.html"
     }

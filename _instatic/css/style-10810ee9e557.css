@@ -1559,3 +1559,7 @@
   min-width: 80px;
   }
 }
+
+.vera {
+  font-family: var(--font-alta);
+}
