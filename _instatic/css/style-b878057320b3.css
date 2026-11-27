@@ -1328,7 +1328,6 @@
 
 .suisse-intl {
   font-family: var(--font-suisse-intl);
-  font-weight: 600;
 }
 
 .my-view-heading {
@@ -1562,4 +1561,5 @@
 
 .vera {
   font-family: var(--font-alta);
+  letter-spacing: 0.1em;
 }

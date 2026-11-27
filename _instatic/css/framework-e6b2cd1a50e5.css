@@ -8,6 +8,7 @@
   --font-gothic: "Gothic", sans-serif;
   --font-suisse-intl: "Suisse Intl", sans-serif;
   --font-alta: "Alta", sans-serif;
+  --font-suisse: "suisse", sans-serif;
 }
 
 @font-face {
@@ -96,6 +97,14 @@
   font-weight: 400;
   font-display: swap;
   src: url("/uploads/hWLRBGEHmex-aREVUqlbz-Alta_regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "suisse";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/uploads/JXV_pSkGuwLMTLNWZmFL7-SuisseIntl-SemiBold.ttf") format("truetype");
 }
 :root {
   --black: hsla(0, 0%, 8.24%, 1);
